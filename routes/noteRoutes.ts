@@ -6,6 +6,9 @@ import {
 	updateNote,
 	deleteNote,
 } from "../controllers/notesControllers";
+import verifyJWT from "../middleware/verifyJWT";
+
+router.use(verifyJWT);
 
 router
 	.route("/")

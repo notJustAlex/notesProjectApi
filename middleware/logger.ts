@@ -17,8 +17,8 @@ const logEvents = async (message: string, logFileName: string) => {
 			path.join(__dirname, "..", "logs", logFileName),
 			logItem
 		);
-	} catch (error) {
-		console.log(error);
+	} catch (error: any) {
+		throw new Error(error);
 	}
 };
 
@@ -28,7 +28,6 @@ const logger = (
 	next: express.NextFunction
 ) => {
 	logEvents(`${req.method}\t${req.url}\t${req.headers.origin}`, "reqLog.log");
-	console.log(`${req.method} ${req.path}`);
 	next();
 };
 

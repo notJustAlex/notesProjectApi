@@ -6,12 +6,13 @@ import {
 	deleteUser,
 	createNewUser,
 } from "../controllers/usersController";
+import verifyJWT from "../middleware/verifyJWT";
 
 router
 	.route("/")
 	.get(getAllUsers)
 	.post(createNewUser)
 	.patch(updateUser)
-	.delete(deleteUser);
+	.delete(verifyJWT, deleteUser);
 
 module.exports = router;

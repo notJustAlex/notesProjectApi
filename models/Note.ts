@@ -19,7 +19,7 @@ const noteSchema = new mongoose.Schema(
 			type: Boolean,
 			default: false,
 		},
-		topic: {
+		category: {
 			type: String,
 			required: true,
 		},
