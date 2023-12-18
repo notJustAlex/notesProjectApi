@@ -4,7 +4,7 @@
 	"description": "notesProject MERN",
 	"main": "index.js",
 	"scripts": {
-		"start": "node server",
+		"start": "node server.ts",
 		"dev": "nodemon server"
 	},
 	"keywords": [],
